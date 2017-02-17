@@ -12,9 +12,12 @@ This codebase forked from [Snoozer](https://github.com/adrienjoly/snoozer), whic
 
 ## Setup
 
-<!--
 Before running, don't forget to:
 
+1. generate an *app key* and *token* from [Trello](https://trello.com/app-key),
+2. and set the corresponding environment variables: `TRELLO_KEY` and `TRELLO_TOKEN`.
+
+<!--
 1. create an app and web client auth on Google's Developer Console;   
 2. and set the corresponding environment variables: `GCAL_CLIENT_ID`, `GCAL_CLIENT_SECRET` and `GCAL_REDIRECT_URL`
 -->

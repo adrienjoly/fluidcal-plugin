@@ -4,10 +4,8 @@
   "version": "0.1.0",
   "scripts": {
     "start": "source .env; node server.js",
-    "start-http": "source .env; node server-http.js",
-    "start-docs": "cd docs && python -m SimpleHTTPServer 3000",
     "client": "node tests/client.js",
-    "test": "node tests/test-gcal.js"
+    "test": "source .env; node tests/test-trello.js"
   },
   "dependencies": {
     "async": "^1.5.2",
@@ -20,6 +18,7 @@
     "minimist": "^1.2.0",
     "moment": "^2.15.1",
     "snoozeable-element": "^1.0.0",
+    "trello": "^0.7.0",
     "uuid": "^2.0.3"
   }
 }
