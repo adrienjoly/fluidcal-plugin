@@ -13,10 +13,10 @@ const logNamesAndIds = (err, item) => console.log('=>', err || item.map((i) => [
 trello.getCardsOnBoard('57a481755ab2c09495ba5c3b')
   .then((cards) => cards.map((card) =>
     trello.getChecklistsOnCard(card.id)
-      .then((items) => items.length && {
+      .then((checklists) => checklists.length && {
         cardId: card.id,
         cardName: card.name,
-        items: items,
+        checklists: checklists,
       })
     )
   )
@@ -25,6 +25,12 @@ trello.getCardsOnBoard('57a481755ab2c09495ba5c3b')
     checklists
       .filter((chkList) => !!chkList)
       .forEach((chkList) => {
-        console.log(chkList.cardName, chkList.items.map((item) => item.name))
+        console.log(chkList.cardName)
+        chkList.checklists.map((checklist) => {
+          console.log('  -', checklist.name)
+          checklist.checkItems.forEach((item) =>
+            console.log('    -', item.name)
+          )
+        })
       })
   )
