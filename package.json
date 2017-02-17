@@ -1,5 +1,6 @@
 {
-  "name": "snoozer",
+  "name": "fluidcal-plugin",
+  "description": "import tasks from a trello board's checklists",
   "version": "0.1.0",
   "scripts": {
     "start": "source .env; node server.js",

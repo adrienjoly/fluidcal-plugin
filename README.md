@@ -1,16 +1,10 @@
-# Snoozer
+# FluidCal Plug-in
 
-[Jérémie](https://github.com/jeremiegirault) and [I](https://www.pitchcard.io/c/B1Ykjbg3) expressed our frustration of not being able to "snooze" our scheduled tasks, similarly to Google Inbox. So we prototyped a snoozable Google Calendar for iOS:
+(WIP) Import tasks from a trello board's checklists
 
-![Snoozer swipe animation on ios](https://s3.amazonaws.com/revue/items/images/001/507/063/original/snoozer.gif?1475601251)
-
-This codebase was written thanks to the following resources:
+This codebase forked from [Snoozer](https://github.com/adrienjoly/snoozer), which was written thanks to the following resources:
 - [gRPC Basics: Node.js](http://www.grpc.io/docs/tutorials/basic/node.html)
 - [Google Calendar Quickstart with Node.js](https://developers.google.com/google-apps/calendar/quickstart/nodejs)
-
-You can find the [iOS app on Jérémie's repo](https://github.com/jeremiegirault/snoozer-client).
-
-We crafted this in one day. You can read our story [here](https://www.getrevue.co/profile/aj-sideprojects/issues/day-10-snooze-your-calendar-events-on-ios-32185), and subscribe to my side-projects [there](https://www.getrevue.co/profile/aj-sideprojects).
 
 ## Prerequisites
 
@@ -18,12 +12,14 @@ We crafted this in one day. You can read our story [here](https://www.getrevue.c
 
 ## Setup
 
+<!--
 Before running, don't forget to:
 
 1. create an app and web client auth on Google's Developer Console;   
 2. and set the corresponding environment variables: `GCAL_CLIENT_ID`, `GCAL_CLIENT_SECRET` and `GCAL_REDIRECT_URL`
+-->
 
-Then, you can type the following commands to start the server:
+Type the following commands to start the server:
 
 ```sh
 $ npm install
