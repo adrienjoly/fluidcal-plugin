@@ -7,10 +7,24 @@ const logNamesAndIds = (err, item) => console.log('=>', err || item.map((i) => [
 
 //trello.getBoards('adrienjoly', logNamesAndIds)
 //trello.getCardsOnBoard('57a481755ab2c09495ba5c3b', logNamesAndIds)
+
+
+
 trello.getCardsOnBoard('57a481755ab2c09495ba5c3b')
-  .then((cards) => [
-    new Promise((resolve, reject) => { console.log('a'); resolve() }),
-    new Promise((resolve, reject) => { console.log('b'); resolve() }),
-  ])
-  .then((fetchList) => Promise.all(fetchList))
-  .then(() => console.log('done.'))
+  .then((cards) => cards.map((card) =>
+    trello.getChecklistsOnCard(card.id)
+      .then((items) => items.length && {
+        cardId: card.id,
+        cardName: card.name,
+        items: items,
+      })
+    )
+  )
+  .then((fetchers) => Promise.all(fetchers))
+  .then((checklists) =>
+    checklists
+      .filter((chkList) => !!chkList)
+      .forEach((chkList) => {
+        console.log(chkList.cardName, chkList.items.map((item) => item.name))
+      })
+  )
