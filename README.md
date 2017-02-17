@@ -19,17 +19,11 @@ Before running, don't forget to:
 2. and set the corresponding environment variables: `GCAL_CLIENT_ID`, `GCAL_CLIENT_SECRET` and `GCAL_REDIRECT_URL`
 -->
 
-Type the following commands to start the server:
+Type the following commands to start the server (HTTP+GRPC):
 
 ```sh
 $ npm install
 $ npm start
-```
-
-Instead of starting the gRPC server, you can use the HTTP/REST server by running:
-
-```sh
-$ node server-http.js
 $ open http://localhost:3000
 ``` 
 
