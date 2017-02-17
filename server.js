@@ -1,9 +1,8 @@
-var PROTO_PATH = __dirname + '/snoozer.proto';
-var HOST = '0.0.0.0:50051';
-
 var grpc = require('grpc');
-var protocol = grpc.load(PROTO_PATH).snoozer;
-var serverMethods = require('./server-methods');
+
+// app-specific configuration
+var service = grpc.load(__dirname + '/fluidcal-plugin.proto').fluidcal.FluidCalPlugin.service;
+var serverMethods = require('./server-methods'); // implementation of methods
 
 function wrapMethod(fct){
   return function(call, callback) {
@@ -19,13 +18,13 @@ Object.keys(serverMethods).forEach(function(name){
   methods[name] = wrapMethod(serverMethods[name]);
 });
 
-function startServer() {
+function startServer(host) {
   console.log('start RPC server...');
   var server = new grpc.Server();
-  server.addProtoService(protocol.Snoozer.service, methods);
-  server.bind(HOST, grpc.ServerCredentials.createInsecure());
+  server.addProtoService(service, methods);
+  server.bind(host, grpc.ServerCredentials.createInsecure());
   server.start();
-  console.log('server running on', HOST);
+  console.log('server running on', host);
 }
 
-startServer();
+startServer('0.0.0.0:50051');

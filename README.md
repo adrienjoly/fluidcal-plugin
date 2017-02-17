@@ -37,5 +37,5 @@ $ open http://localhost:3000
 
 ```sh
 $ npm test        # => tests the Google Calendar API
-$ npm run client  # => tests the Snoozer's gRPC API
+$ npm run client  # => tests the plugin's gRPC API
 ```

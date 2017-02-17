@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+option objc_class_prefix = "FCA";
+
+package fluidcal;
+
+// Well-known types
+// (from https://developers.google.com/protocol-buffers/docs/reference/google.protobuf)
+
+message Duration {
+  int64 seconds	= 1;
+  int32 nanos	= 2;
+}
+
+message Timestamp {
+  int64 seconds	= 1;
+  int32 nanos	= 2;
+}
+
+// messages
+
+message Task {
+  string name = 1;
+  Duration duration = 2; 
+  // TODO
+}
+
+message UserSession {
+  // TODO
+}
+
+message TaskSuggestionsRequest {
+  UserSession userSession = 1;
+  Timestamp selectedDateTime = 2;
+}
+
+message TaskSuggestions {
+  repeated Task tasks = 1;
+}
+
+// API definition
+
+service FluidCalPlugin {
+  rpc GetTaskSuggestions(TaskSuggestionsRequest) returns (TaskSuggestions) {}
+}

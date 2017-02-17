@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/adrienjoly/snoozer.git"
+    "url": "git+https://github.com/adrienjoly/fluidcal-plugin.git"
   },
   "keywords": [
     "calendar",
@@ -19,11 +19,10 @@
     "productivity"
   ],
   "author": "Adrien Joly <adrien.joly@gmail.com>",
-  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/adrienjoly/snoozer/issues"
+    "url": "https://github.com/adrienjoly/fluidcal-plugin/issues"
   },
-  "homepage": "https://github.com/adrienjoly/snoozer#readme",
+  "homepage": "https://github.com/adrienjoly/fluidcal-plugin#readme",
   "dependencies": {
     "diff": "^3.2.0"
   }
